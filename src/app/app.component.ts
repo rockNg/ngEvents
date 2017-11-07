@@ -8,6 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
+  constructor(a: any) {
+    document.onscroll = this.manipulateTabPosition.bind(this);  //can not use call(this) here
+
+  }
+
+  manipulateTabPosition(e) {
+    console.log(document.documentElement.scrollTop);
+    //see C:\Users\rockwang\workspace\FE\tdcweb\src\app\components\products\common\components\tabs\tabs\tabs.component.ts
+  }
+
   onClick(e) {
   	console.log('onClick', e);
   }
